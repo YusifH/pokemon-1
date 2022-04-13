@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:pokemon_app/widgets/pokelist_item.dart';
 
 import '../model/pokemon_model.dart';
 import '../services/pokedeks_api.dart';
@@ -30,7 +33,7 @@ class _PokemonListState extends State<PokemonList> {
               itemCount: _listem.length,
               itemBuilder: (context, index) {
                 var  currentPokemon = _listem[index];
-                return ListTile(title: Text(currentPokemon.name.toString()),);
+                return PokeListItem(pokemon: currentPokemon);
               });
         }else if (snapshot.hasError) {
           return Center(

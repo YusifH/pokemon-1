@@ -29,7 +29,6 @@ class _AppTitleState extends State<AppTitle> {
             child: Image.asset(
               pokeBallImg,
               width: ScreenUtil().orientation == Orientation.portrait ? 0.2.sh : 0.2.sw,
-
               fit: BoxFit.cover,),
           )
         ],

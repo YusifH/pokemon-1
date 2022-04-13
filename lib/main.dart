@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         builder: (context) => MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Pokedeks',
-          theme: ThemeData.dark(),
+          theme: ThemeData.light(),
           home: const Homepage(),
         ),);
   }

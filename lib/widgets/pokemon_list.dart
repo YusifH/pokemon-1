@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pokemon_app/widgets/pokelist_item.dart';
 
 import '../model/pokemon_model.dart';
@@ -29,15 +30,14 @@ class _PokemonListState extends State<PokemonList> {
       builder: (context, snapshot) {
         if(snapshot.hasData) {
           List<PokemonModel> _listem = snapshot.data!;
-          return ListView.builder(
+          return GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: ScreenUtil().orientation == Orientation.portrait ? 2 : 3),
+              itemBuilder: (context, index) => PokeListItem(pokemon: _listem[index]),
               itemCount: _listem.length,
-              itemBuilder: (context, index) {
-                var  currentPokemon = _listem[index];
-                return PokeListItem(pokemon: currentPokemon);
-              });
+          );
         }else if (snapshot.hasError) {
           return Center(
-            child: Text('data yoxdu'),
+            child: Text('Internet  yoxdu...'),
           );
         }else{
           return Center(
@@ -49,5 +49,3 @@ class _PokemonListState extends State<PokemonList> {
     );
   }
 }
-
-

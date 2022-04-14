@@ -14,4 +14,12 @@ class Constants{
       fontSize: 48
     );
   }
+
+  static TextStyle getPokemonNameStyle(){
+    return TextStyle(
+        color:  Colors.black,
+        fontWeight: FontWeight.bold,
+        fontSize: 22
+    );
+  }
 }

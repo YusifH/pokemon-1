@@ -17,7 +17,7 @@ class Constants{
 
   static TextStyle getPokemonNameStyle(){
     return TextStyle(
-        color:  Colors.black,
+        color:  Colors.white,
         fontWeight: FontWeight.bold,
         fontSize: 22
     );
